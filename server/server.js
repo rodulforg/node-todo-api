@@ -16,7 +16,7 @@ app.post('/todos', (req,res) => {
     todo.save().then( (doc) => {
         res.send(doc);
     }, (e) => {
-        console.log(e); 
+        //console.log(e); 
         res.status(400).send(e);
     });
 });
@@ -24,3 +24,5 @@ app.post('/todos', (req,res) => {
 app.listen(80, () => {
     console.log('Server is up and running');
 });
+
+module.exports = {app};
