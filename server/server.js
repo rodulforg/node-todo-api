@@ -8,6 +8,8 @@ var {User} = require('./models/user');
 
 
 var app = express();
+const port = process.env.PORT || 80;
+
 app.use(bodyParser.json());
 
 app.post('/todos', (req,res) => {
@@ -50,8 +52,8 @@ app.get('/todos/:id', (req, res) => {
     });
 });
 
-app.listen(80, () => {
-    console.log('Server is up and running');
+app.listen(port, () => {
+    console.log(`Server is up and running at port ${port}`);
 });
 
 module.exports = {app};
