@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/TodoApp', { useNewUrlParser: true }); 
-// mongoose.connect('mongodb://dudemonkey:dudemonkeyT3stDB@ds241723.mlab.com:41723/todo-api-db'); 
+//mongoose.connect('mongodb://localhost:27017/TodoApp', { useNewUrlParser: true }); 
+mongoose.connect('mongodb://dudemonkey:dudemonkeyT3stDB@ds241723.mlab.com:41723/todo-api-db'); 
 
 
 
