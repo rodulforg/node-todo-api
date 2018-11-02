@@ -106,4 +106,21 @@ app.listen(port, () => {
     console.log(`Server is up and running at port ${port}`);
 });
 
+// Users
+
+app.post('/users', (req,res) => {
+    var new_user = _.pick(req.body, ['email','password']);
+
+    var user = new User(new_user);
+
+    user.save().then( () => {
+        return user.generateAuthToken();
+        // res.send(doc);
+    }).then( (token) => {
+        res.header('x-auth',token).send(user);
+    }).catch( (e) => {
+        res.status(400).send(e);
+    });
+});
+
 module.exports = {app};
